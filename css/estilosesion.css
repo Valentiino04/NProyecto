@@ -1,0 +1,237 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 0; /* Eliminar paddings por defecto */
+}
+
+/* Encabezado */
+.header-container {
+    background-color: #D3A783;
+    color: white;
+    padding: 0.5em 1em; /* Reducido para compactar el encabezado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Asegura que el encabezado ocupe todo el ancho de la página */
+}
+
+/* Contenedor del logo y el texto */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-container .logo {
+    font-size: 1.2em; /* Tamaño más pequeño para el nombre de la tienda */
+    font-weight: bold;
+}
+
+.logo-container .logo a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Ajustes específicos para el logo */
+.logo-container .logo-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.logo-container .logo-button img {
+    width: 100px; /* Tamaño más pequeño para el logo */
+    height: auto; /* Mantiene la proporción del logo */
+    object-fit: contain;
+    display: inline-block;
+    background: none;
+    margin-right: 5px;
+}
+
+/* Navegación */
+nav a {
+    color: white;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+/* Iconos de la barra superior */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons span {
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.user-icon {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+/* Menú de usuario */
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.5em 1em;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.user-icon:hover .user-menu {
+    display: block;
+}
+
+.user-menu a {
+    display: block;
+    padding: 0.5em 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.user-menu a:hover {
+    color: #d9534f;
+}
+
+/* Formulario de inicio de sesión */
+.login-container {
+    max-width: 400px;
+    margin: 2em auto;
+    padding: 2em;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.login-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1em;
+}
+
+.login-tabs button {
+    background: none;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    color: #333;
+}
+
+.login-tabs .active {
+    border-bottom: 2px solid #d9534f;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: left;
+}
+
+.login-form label {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+/* Cambios en el contenedor de la contraseña */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 35px; /* Espacio para el icono */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.login-options a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    padding: 0.8em;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.google-button {
+    padding: 0.8em;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-link {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.register-link a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

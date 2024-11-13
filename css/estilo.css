@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Encabezado */
+.header-container {
+    background-color: #D3A783;
+    color: white;
+    padding: 0.5em 1em; /* Reducimos el padding para compactar el encabezado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenedor del logo y botón */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduce el espacio entre el logo y el texto */
+}
+
+.logo-container .logo {
+    font-size: 1.2em; /* Reduce el tamaño de la fuente del nombre de la tienda */
+    font-weight: bold;
+}
+
+.logo-container .logo a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Ajustes específicos para el logo */
+.logo-container .logo-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.logo-container .logo-button img {
+    width: 100px; /* Tamaño más pequeño para el logo */
+    height: auto; /* Mantén la proporción del logo */
+    object-fit: contain; /* Asegura que el logo no se deforme */
+    display: inline-block;
+    background: none; /* Elimina cualquier fondo adicional */
+    margin-right: 5px; /* Espacio entre el logo y el texto */
+}
+
+/* Navegación */
+nav a {
+    color: white;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons span {
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.user-icon {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.5em 1em;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.user-icon:hover .user-menu {
+    display: block;
+}
+
+.user-menu a {
+    display: block;
+    padding: 0.5em 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.user-menu a:hover {
+    color: #d9534f;
+}
+
+/* Ruta de navegación (Breadcrumb) */
+.breadcrumb {
+    padding: 1em;
+    background-color: #f2f2f2;
+}
+
+/* Contenedor principal que tiene la barra lateral y los productos */
+.content-container {
+    display: flex;
+    padding: 1em;
+    gap: 2em; /* Agregamos un espacio entre la barra lateral y los productos */
+}
+
+/* Barra lateral con filtros */
+.filters {
+    flex: 0 0 250px; /* Fija el ancho de la barra lateral a 250px */
+    padding-right: 2em;
+    position: sticky; /* Mantiene la barra lateral fija mientras se hace scroll */
+    top: 0; /* Asegura que esté en la parte superior */
+    height: 100vh; /* Para que la barra lateral tenga la altura completa de la pantalla */
+    overflow-y: auto; /* Permite hacer scroll si el contenido es muy largo */
+}
+
+/* Estilos del menú desplegable */
+.filter-section {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5em;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5em;
+    background-color: #f9f9f9;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-header:hover {
+    background-color: #f2f2f2;
+}
+
+.filter-header .arrow {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.filter-header.open .arrow {
+    transform: rotate(90deg); /* Rotar flecha cuando está abierto */
+}
+
+.filter-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* Oculto por defecto */
+    padding-left: 1em;
+}
+
+.filter-options.show {
+    display: block; /* Mostrar opciones desplegadas */
+}
+
+.filter-options li {
+    margin-bottom: 0.5em;
+}
+
+.filter-options input {
+    margin-right: 0.5em;
+}
+
+.filter-options label {
+    font-size: 0.9em;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Productos */
+.products {
+    flex: 1; /* Asegura que los productos ocupen el espacio restante */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: flex-start;
+}
+
+/* Estilos individuales de los productos */
+.product-card {
+    background-color: white;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(33.33% - 1em); /* Cada producto ocupará el 33.33% del ancho, con un pequeño margen */
+    margin-bottom: 1em;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-shipping {
+    color: #D3A783;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #D3A783;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #b58969;
+}
+
+/* Carrito */
+.cart-container {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto; /* Permite desplazarse si hay muchos productos */
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.close-cart {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.cart-content {
+    padding: 2em 1em;
+    text-align: center;
+    width: 100%;
+}
+
+.empty-cart p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.empty-cart p:first-child {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+/* Estilos para los elementos del carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.cart-item img {
+    max-width: 80px; /* Limitar el tamaño de la imagen */
+    max-height: 80px; /* Mantener la proporción adecuada */
+    object-fit: contain; /* Mantener la imagen dentro del contenedor sin deformarse */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.cart-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cart-container.show {
+    right: 0;
+}
+
+/* Botón de "Continuar con la compra" */
+.continue-button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #D3A783;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+    background-color: #b58969;
+}
+
+.continue-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Botón de "Limpiar Carrito" */
+.clear-cart-button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart-button:hover {
+    background-color: #e65c50;
+}
+
+/* Espaciado entre botones */
+.clear-cart-button,
+.continue-button {
+    width: 100%; /* Ajustar el tamaño al ancho del contenedor */
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* Pie de página */
+footer {
+    background-color: #D3A783;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+.footer-container nav {
+    margin-top: 0.5em;
+}
+
+.footer-container nav a {
+    color: white;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+.footer-container nav a:hover {
+    text-decoration: underline;
+}
