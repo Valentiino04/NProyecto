@@ -9,7 +9,7 @@ if (isset($_GET['logout'])) {
     // Destruir la sesión
     session_destroy();
     
-    // Limpiar el carrito del localStorage (esto se hace desde el lado del cliente)
+    // Limpiar el carrito del localStorage 
     echo '<script>localStorage.removeItem("carrito");</script>';
 
     // Redirigir al usuario a la página de inicio después de cerrar sesión
