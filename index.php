@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
         </nav>
         
         <div class="header-icons">
-            <span class="search-icon">🔍</span>
+            
             
             <span class="cart-icon">🛒</span>
             <!-- Icono de usuario con menú desplegable -->
@@ -266,8 +266,7 @@ if ($result->num_rows > 0) {
         <p class="product-shipping">ENVÍO GRATIS</p>
         <button class="add-to-cart">Agregar al carrito</button>
     </div>
-     <!-- Productos dinámicos desde la base de datos -->
-<!-- Productos dinámicos desde la base de datos -->
+  
 
 </section>
 

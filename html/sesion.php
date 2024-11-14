@@ -1,5 +1,5 @@
 <?php
-session_start(); // Esta línea debe ser la primera
+session_start(); 
 include '../config/config.php'; // Conexión a la base de datos
 
 // Procesar el formulario de inicio de sesión

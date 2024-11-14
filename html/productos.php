@@ -185,7 +185,7 @@ include '../config/config.php';
     </main>
 
     <footer>
-        <!-- Tu código de footer aquí -->
+        
     </footer>
 </body>
 </html>

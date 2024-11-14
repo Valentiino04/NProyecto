@@ -1,6 +1,6 @@
 <?php
 
-include '../config/config.php'; // Asegúrate de que el camino sea correcto
+include '../config/config.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
